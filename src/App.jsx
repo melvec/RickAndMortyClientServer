@@ -1,9 +1,10 @@
 import './App.css'
 import Cards from './components/Cards/Cards';
-import { useState } from 'react';
+import { useState } from "react";
 import Nav from './components/Nav/Nav'
+import axios from 'axios'
 
-import characters from './data.js'
+//import characters from './data.js'
 
 const example = {
   id: 1,
@@ -21,18 +22,27 @@ const example = {
 
 
 function App() {
-// const [characters, setCharacters] = useState([]);
+ const [characters, setCharacters] = useState([]);
 
-// const onSearch = () => {
-//   setCharacters(example);
-// }
 
-//onSearch();
+const onSearch = (id) => {
+  console.log('receiving id', id );
+  axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+    if (data.name) {
+       setCharacters((oldChars) => [...oldChars, data]);
+    } else {
+       window.alert('¡No hay personajes con este ID!');
+    }
+ });
+}
+ 
+
+
 
   return (
     <>
      <div className='App'>
-         <Nav />
+          <Nav onSearch= {onSearch}/> 
          <Cards characters={characters} /> 
          
       </div>

@@ -19,12 +19,14 @@ export default function SearchBar({ onSearch }) {
             type="search" 
             
             onChange={handleChange} 
+            placeholder="Type a number"
       />
       <button onClick={()=>{
         console.log('id en el search '+id);
         
         onSearch(id);
-        $("#idCard").children('input').value('');}}>Agregar</button>
+        console.log('ejecutando setID');
+        setID("")}}>Add</button>
     </div>
   );
 }

@@ -36,6 +36,11 @@ const onSearch = (id) => {
  });
 }
  
+const  onClose =(id)=> {
+  console.log("ejecutando on close "+ id);
+ const newChar = characters.filter((character)=> character.id !== Number(id));
+  setCharacters(newChar);
+}
 
 
 
@@ -43,7 +48,7 @@ const onSearch = (id) => {
     <>
      <div className='App'>
           <Nav onSearch= {onSearch}/> 
-         <Cards characters={characters} /> 
+         <Cards characters={characters} onClose={onClose} /> 
          
       </div>
        

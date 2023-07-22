@@ -9,24 +9,26 @@ export default function SearchBar({ onSearch }) {
     console.log(event.target.value);
   };
   const clearInput = () => {
-    event.target.value.res
-     console.log(event.target.value);
-   };
+    setID("");
+  };
   return (
     <div className={styles.SearchBar}>
       <input
-            name="idCard" 
-            type="search" 
-            
-            onChange={handleChange} 
-            placeholder="Type a number"
+        name="idCard"
+        type="search"
+        value={id}
+        onChange={handleChange}
+        placeholder="Type a number"
       />
-      <button onClick={()=>{
-        console.log('id en el search '+id);
-        
-        onSearch(id);
-        console.log('ejecutando setID');
-        setID("")}}>Add</button>
+      <button
+        onClick={() => {
+          console.log("id en el search " + id);
+          onSearch(id);
+          clearInput();
+        }}
+      >
+        Add
+      </button>
     </div>
   );
 }

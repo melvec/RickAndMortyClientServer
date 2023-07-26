@@ -3,17 +3,20 @@ import { Link } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom'
 
 export function Card(props) {
   const [isFav, setIsFav] = useState(false);
+  const { pathname } = useLocation();
 
+  
   useEffect(() => {
-    props.myFavorites?.forEach((fav) => {
+    props.myFavourates.forEach((fav) => {
        if (fav.id === props.id) {
           setIsFav(true);
        }
     });
- }, [props.myFavorites]);
+ }, [props.myFavourates]);
 
   const handleFavourate = () => {
     if (isFav) {
@@ -30,7 +33,9 @@ export function Card(props) {
   return (
     <>
       <div className={styles.card}>
-    <div className={styles.fav}>
+   
+
+      <div className={styles.fav}>
         {isFav ? (
           <button onClick={handleFavourate}>
             ❤️
@@ -40,14 +45,19 @@ export function Card(props) {
         )}
 
     </div>
+<div>
 
-        <button
+<div className={styles.closeButton}>
+
+        { pathname === '/' && <button
           onClick={() => {
             props.onClose(props.id);
           }}
         >
           X
-        </button>
+        </button>}
+</div>
+</div>
         <Link to={`/detail/${props.id}`}>
           <div>
             <img src={props.image} alt="" />
@@ -78,7 +88,7 @@ export const mapDispatchToProps = (dispatch) => {
 };
 
 //Una vez hecho esto, nos tenemos que asegurar que el status de nuestro estado local se mantenga aunque nos vayamos y volvamos al compon
-export const mapStateToProps = (state) => {
+export function mapStateToProps(state) {
   return {
     myFavourates: state.myFavourates
   }

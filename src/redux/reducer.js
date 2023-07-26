@@ -1,5 +1,6 @@
 const initialState = {
     myFavourates: [],
+   // allCharacters: []
 }
 
 const rootReducer = (state = initialState, {type, payload}) =>{
@@ -9,12 +10,27 @@ const rootReducer = (state = initialState, {type, payload}) =>{
             console.log(payload);
             return {
                 ...state,
-                myFavourates: [...state.myFavourates, action.payload]}
+                myFavourates: [...state.myFavourates, payload],
+               // allCharacters: [...state.allCharacters, payload]
+            }
         case 'REMOVE_FAV':
             let copy = state.myFavourates.filter((character)=>{
                 return character.id !== parseInt(payload);
             });
-            return {myFavourates: copy}
+            return {myFavourates: copy,
+            //allCharacters: copy
+        }
+        
+        
+        // case 'FILTER':
+        //     let copy2 = [...state.allCharacters];
+            
+        //     let filterGender = copy2.filter((character) => {
+        //         return character.gender === payload
+        //     })
+
+       
+
         default: 
             return {...state}; // returns a copy of the received state
     }

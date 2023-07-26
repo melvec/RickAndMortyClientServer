@@ -8,17 +8,17 @@ const Home = ({ characters, onClose }) => {
 
   return (
     <>
-      <h2>Rick and Morty Characters</h2>
+   
 
       <Cards characters={characters} onClose={onClose} />
 
-      <button
+      {/* <button
         onClick={() => {
           navegacion("/about");
         }}
       >
         Ingresar
-      </button>
+      </button> */}
     </>
   );
 };

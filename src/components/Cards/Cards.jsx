@@ -1,8 +1,11 @@
 import Card from "../Card/Card";
 import styles from './Cards.module.css'
 
-export default function Cards(props) {
-  console.log(props.characters);
+
+
+export default  function Cards(props) {
+  
+
   return (
     <div className={styles.container} >
       <div className={styles.items}>
@@ -27,3 +30,4 @@ export default function Cards(props) {
     </div>
   );
 }
+

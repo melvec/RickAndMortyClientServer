@@ -2,6 +2,8 @@ import "./App.css";
 import Home from './views/Home.jsx'
 import About from './views/About.jsx'
 import Detail from './components/Detail/Detail'
+import Favourates from './components/Favourates/Favourates'
+import Contact from './views/Contact'
 import { Route, Routes } from "react-router-dom"
 import Nav from "./components/Nav/Nav";
 import axios from 'axios';
@@ -51,6 +53,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home characters={characters} onClose={onClose}/>} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/favourates" element={<Favourates />} />
           <Route path="/detail/:id" element={<Detail />} />
           
         </Routes>

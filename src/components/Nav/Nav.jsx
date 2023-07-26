@@ -21,6 +21,13 @@ export default function Nav({ onSearch }) {
             </Link>
           </li>
           <li>
+         
+            <Link to="/favourates">
+            
+              <span>Favourates </span>
+            </Link>
+          </li>
+          <li>
             <Link to="/about">
           
               <span>About </span>

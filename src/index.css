@@ -1,18 +1,21 @@
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-image: url("./assets/rym.png"); 
-  background-repeat: no-repeat;
+  background-image: url("./assets/rym.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  
+  background-repeat: no-repeat;
+  background-color: black;
+  
 
  
 
 }
 
  @media (max-width: 768px) {
-    body {
-      background-color: black;
-      background-size: cover;
-    }
+   
 }
 
 a {

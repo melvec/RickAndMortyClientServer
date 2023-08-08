@@ -44,6 +44,10 @@
   .card button:hover {
     color: #000;
   }
+
+.card button:focus {
+  outline: none;
+}
   
   .card img {
     width: 100%;

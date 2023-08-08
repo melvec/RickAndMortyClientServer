@@ -26,3 +26,6 @@ outline: none;
 .SearchBar button:hover{
     color: darkorange;
 }
+.SearchBar button:focus {
+  outline: none;
+}

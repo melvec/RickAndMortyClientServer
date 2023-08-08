@@ -11,12 +11,12 @@ export function Card(props) {
 
   
   useEffect(() => {
-    props.myFavourates.forEach((fav) => {
+    props.allCharacters.forEach((fav) => {
        if (fav.id === props.id) {
           setIsFav(true);
        }
     });
- }, [props.myFavourates]);
+ }, [props.allCharacters]);
 
   const handleFavourate = () => {
     if (isFav) {
@@ -90,7 +90,7 @@ export const mapDispatchToProps = (dispatch) => {
 //Una vez hecho esto, nos tenemos que asegurar que el status de nuestro estado local se mantenga aunque nos vayamos y volvamos al compon
 export function mapStateToProps(state) {
   return {
-    myFavourates: state.myFavourates
+    allCharacters: state.allCharacters
   }
 }
 

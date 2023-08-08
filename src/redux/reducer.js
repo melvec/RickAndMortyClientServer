@@ -14,7 +14,7 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 allCharacters: [...state.allCharacters, payload]
             }
         case 'REMOVE_FAV':
-            let copy = state.myFavourates.filter((character)=>{
+            let copy = state.allCharacters.filter((character)=>{
                 return character.id !== parseInt(payload);
             });
             return {

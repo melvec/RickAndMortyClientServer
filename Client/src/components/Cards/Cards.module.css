@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+   
+    
+    padding-top: 2rem;
+  }
+  
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: center;
+ 
+  }
+  

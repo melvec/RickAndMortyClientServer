@@ -1,0 +1,77 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+     /* background-color:  #FAF0D7;  */
+     background-color: rgba(243, 145, 26, 0.3);
+    position: relative;
+    display: flex ;
+ 
+    
+  }
+
+.fav {
+ 
+  position: absolute;
+  top: 0px; 
+    left: 0px;
+    padding: 0;
+    
+}
+.fav button{
+ border: none;
+ background: none;
+ font-size: 30px;
+}
+  
+ 
+  .closeButton button {
+    
+  
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px; 
+    right: 10px;
+       
+  }
+  
+  .card button:hover {
+    color: #000;
+  }
+
+.card button:focus {
+  outline: none;
+}
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+   
+  }
+  .card h1 {
+    font-size: 20px;   
+      right: 0; /* Position at the left */
+      bottom: 0;
+      margin: 0; /* Remove margin */
+      padding: 10px; /* Add padding for better visibility */
+      background-color: rgba(255, 255, 255, 0.7); /* Add a background color with opacity */
+  }
+
+
+  .card h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  
+
+
+  

@@ -1,0 +1,80 @@
+/* Rick and Morty Login Form CSS */
+
+
+
+.form-container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    
+    
+}
+
+form {
+    width: 300px;
+    margin:  40px auto;
+    padding: 20px;
+    background-color: #121214; /* Dark blue background */
+    font-family: Arial, sans-serif;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffeb3b; /* Yellow label text */
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffeb3b; /* Yellow border */
+    border-radius: 3px;
+    background-color: #ffffff; /* White input background */
+    color: #333;
+    
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border: 1px solid #ffc107; /* Brighter yellow border on focus */
+  }
+  
+  span {
+    color: #ff9800; /* Rick's lab coat orange for error message */
+    font-size: 12px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ff9800; /* Rick's lab coat orange */
+    color: #041e42; /* Dark blue text */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ffc107; /* Brighter yellow on hover */
+  }
+  
+  /* Rick and Morty image/logo for fun */
+  .rmLogo {
+    width: 200px;
+  height: 200px;
+
+  }
+  
+  .error {
+    border: 1px solid #ff5722; /* Red border for error */
+  }
+  .success {
+    border: 1px solid #4caf50; /* Green border for success */
+  }
+  

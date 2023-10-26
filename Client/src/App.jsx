@@ -14,7 +14,7 @@ import {useNavigate} from 'react-router-dom';
 import { useEffect } from "react";
 
 
-//import characters from './data.js'
+//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'//import characters from './data.js'
 
 
 
@@ -37,15 +37,15 @@ function App(login) {
     if (characterExist.length > 0) {
       window.alert("There is already a character with that ID!");
     } else {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      .then(
         ({ data }) => {
           if (data.name) {
             setCharacters((oldChars) => [data, ...oldChars]);
-          } else {
-            window.alert("¡No hay personajes con este ID!");
-          }
+          } 
         }
-      );
+      )
+      .catch(({response: {data}})=> window.alert(data));
     }
   };
   const onClose = (id) => {

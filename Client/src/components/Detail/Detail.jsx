@@ -9,7 +9,7 @@ const Detail = () =>{
     const {id} = useParams();
   
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
            if (data.name) {
               setCharacters(data);
            } else {
@@ -32,6 +32,7 @@ const Detail = () =>{
          <h2>{character.status}</h2>
          <h2>{character.species}</h2>
          <h2>{character.gender}</h2> 
+         <h2>{character.origin}</h2> 
         
         
 

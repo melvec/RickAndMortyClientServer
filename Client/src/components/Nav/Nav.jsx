@@ -34,7 +34,7 @@ export default function Nav({ onSearch }) {
         
           <li>
           
-            <Link to="/">
+            <Link to="/home">
             <a href="#">Home </a>
              
             </Link>

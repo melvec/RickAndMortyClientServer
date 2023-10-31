@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "./Login.module.css";
 import {useNavigate} from 'react-router-dom';
 import { useEffect } from "react";
-
+import axios from "axios"; 
 
 const validate = (form, errors, setErrors) => {
   if (!form.email) setErrors({ ...errors, email: "Email cannot be empty" });
@@ -18,8 +18,8 @@ const validate = (form, errors, setErrors) => {
 
 const Form = () => {
 
-  const email = 'example@gmail.com';
-  const password = '1234'
+  // const email = 'example@gmail.com';
+  // const password = '1234'
 
 
   const [form, setForm] = useState({
@@ -44,15 +44,26 @@ useEffect(() => {
    
   });
 
-  const login = (form) =>{
-    if (form.password === password && form.email === email) {
-      setAccess(true);
-      navigate('/home');
-   }
-   else{
-      alert('Invalid details');
-   }
-  }
+  // const login = (form) =>{
+  //   if (form.password === password && form.email === email) {
+  //     setAccess(true);
+  //     navigate('/home');
+  //  }
+  //  else{
+  //     alert('Invalid details');
+  //  }
+  // }
+
+
+  function login(userData) {
+    const { email, password } = userData;
+    const URL = 'http://localhost:3001/rickandmorty/login/';
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/home');
+    });
+ }
   
 
   const handleChange = (event) => {

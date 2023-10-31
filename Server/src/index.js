@@ -1,22 +1,53 @@
-const server = require("http");
-const getCharById = require("./controllers/getCharById");
-const characters = require("./utils/data")
 
+const express = require('express');
+const router = require("./routes/index");
+
+const server = express();
 const PORT = 3001;
 
-server.createServer((req, res)=>{
-  res.setHeader("Access-Control-Allow-Origin", "*"); //CORS
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+     'Access-Control-Allow-Headers',
+     'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  res.header(
+     'Access-Control-Allow-Methods',
+     'GET, POST, OPTIONS, PUT, DELETE'
+  );
+  next();
+});
 
-  if(req.url.includes('rickandmorty/character')){
-    let id = req.url.split('/').pop();
-    getCharById(res,id);
-  }
+server.use(express.json());
+server.use('/rickandmorty', router)
 
-}).listen(PORT, (res)=>{
-  console.log(`Listening on port ${PORT}`);
-})
+server.listen(PORT, () => {
+  console.log('Server raised in port: ' + PORT);
+});
 
 
+
+
+// const server = require("http");
+// const getCharById = require("./controllers/getCharById");
+// const characters = require("./utils/data")
+
+// const PORT = 3001;
+
+// server.createServer((req, res)=>{
+//   res.setHeader("Access-Control-Allow-Origin", "*"); //CORS
+
+//   if(req.url.includes('rickandmorty/character')){
+//     let id = req.url.split('/').pop();
+//     getCharById(res,id);
+//   }
+
+// }).listen(PORT, (res)=>{
+//   console.log(`Listening on port ${PORT}`); 
+// })
+
+ 
 ///// homework Server
 
 // const {url} = req;

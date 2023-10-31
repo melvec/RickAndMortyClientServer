@@ -5,23 +5,29 @@ const initialState = {
 
 const rootReducer = (state = initialState, {type, payload}) =>{
     switch(type){
-        case 'ADD_FAV':
-            console.log( 'ading fav');
-            console.log(payload);
-            return {
-                ...state,
-                 myFavourates: [...state.myFavourates, payload],
-                allCharacters: [...state.allCharacters, payload]
-            }
+         case 'ADD_FAV':
+            return { ...state, myFavorites: payload, allCharacters: payload };
+        //     console.log( 'ading fav');
+        //     console.log(payload);
+        //     return {
+        //         ...state,
+        //          myFavourates: [...state.myFavourates, payload],
+        //         allCharacters: [...state.allCharacters, payload]
+        //     }
+
+        
         case 'REMOVE_FAV':
-            let copy = state.allCharacters.filter((character)=>{
-                return character.id !== parseInt(payload);
-            });
-            return {
-            ...state,    
-            myFavourates: copy,
-            allCharacters: copy
-        }
+            return { ...state, myFavorites: payload };
+            // let copy = state.allCharacters.filter((character)=>{
+            //     return character.id !== parseInt(payload);
+            // });
+            // return {
+            // ...state,    
+            // myFavourates: copy,
+            // allCharacters: copy
+            // }
+
+        
         
         
         case 'FILTER':

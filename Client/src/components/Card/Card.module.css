@@ -27,18 +27,23 @@
  font-size: 30px;
 }
   
+
+.closeButton {
+  position: absolute;
+ 
+  top: -20px; 
+  right: 0px;
+    padding: 0;
+}
  
   .closeButton button {
     
-  
     border: none;
     color: black;
     font-size: 20px;
     cursor: pointer;
-    position: absolute;
-    top: 15px; 
-    right: 10px;
-       
+    
+
   }
   
   .card button:hover {
